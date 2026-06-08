@@ -1,0 +1,15 @@
+{
+  "name": "institute_website",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "GitHub Pages website for public Active Inference Institute information.",
+  "scripts": {
+    "extract": "python3 scripts/extract_pdf.py /Users/4d/Downloads/AII.pdf",
+    "build": "node src/build.mjs",
+    "check": "node --check src/build.mjs && python3 -m py_compile scripts/extract_pdf.py"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
