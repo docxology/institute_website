@@ -1,16 +1,19 @@
 # AGENTS.md — `institute_website/docs/manuscript`
 
-> Status: SKELETON (auto-generated 2026-08-30, fleet pass in progress).
-> Contents below must be verified and expanded by a lane agent before this
-> stub is considered accurate.
-
 ## Scope
-- Local-only path under `projects/ongoing/` — matched by the root
-  `.gitignore` rule `projects/*` and never committed.
-- Parent standard: see `/Volumes/external_drive/Git/template/projects/ongoing/AGENTS.md`.
+
+- Template placeholder, not an active manuscript track. This repository is a
+  public-information website; its content is site pages, not a research paper.
+- `MANUSCRIPT_STATUS.md` records that assessment and what would change it.
 
 ## Layout
-- (to be filled: list child folders/files and their roles)
+
+- `MANUSCRIPT_STATUS.md` — why no publication target applies today.
+- `README.md` — folder stub.
 
 ## Gotchas
-- (to be filled)
+
+- Do not add manuscript scaffolding here speculatively. If institute outreach
+  content is ever formalized into a publication, create `manuscript/` at the
+  repo top level per the `template_code_project` standard and update
+  `MANUSCRIPT_STATUS.md`.

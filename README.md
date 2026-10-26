@@ -11,17 +11,26 @@ The site is source-driven:
 
 ## Local Workflow
 
+Requires Node >= 22 (`package.json` `engines`).
+
 ```bash
-npm run extract
 npm run build
+npm run check
 python3 -m http.server 4173
 ```
 
 Then open `http://127.0.0.1:4173/`.
 
+`npm run extract` re-runs the PDF pipeline (`scripts/extract_pdf.py`) against the
+committed `assets/source/AII.pdf`. It needs poppler (`pdftotext`, `pdfinfo`,
+`pdftoppm`) on `PATH`, and it rewrites the committed `src/content/pdf-pages.json`
+and `assets/img/source-page-*.png`, so run it only when adopting a new source PDF.
+
 ## GitHub Pages
 
-The workflow in `.github/workflows/pages.yml` deploys the static root on every push to `main`.
+There is no CI workflow: GitHub Pages serves the repository root of `main`
+directly, with `.nojekyll` disabling Jekyll processing. The site is published at
+<https://docxology.github.io/institute_website/>.
 
 ## Source Contract
 

@@ -144,10 +144,13 @@ def main() -> int:
     CONTENT_OUT.parent.mkdir(parents=True, exist_ok=True)
     CONTENT_OUT.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     SOURCE_OUT.parent.mkdir(parents=True, exist_ok=True)
-    shutil.copy2(pdf, SOURCE_OUT)
+    if pdf == SOURCE_OUT.resolve():
+        print(f"Using committed source PDF at {SOURCE_OUT}")
+    else:
+        shutil.copy2(pdf, SOURCE_OUT)
+        print(f"Copied source PDF to {SOURCE_OUT}")
     render_thumbnails(pdf)
     print(f"Wrote {CONTENT_OUT} with {len(data['pages'])} pages")
-    print(f"Copied source PDF to {SOURCE_OUT}")
     return 0
 
 

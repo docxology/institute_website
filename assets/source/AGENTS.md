@@ -1,16 +1,20 @@
 # AGENTS.md — `institute_website/assets/source`
 
-> Status: SKELETON (auto-generated 2026-08-30, fleet pass in progress).
-> Contents below must be verified and expanded by a lane agent before this
-> stub is considered accurate.
-
 ## Scope
-- Local-only path under `projects/ongoing/` — matched by the root
-  `.gitignore` rule `projects/*` and never committed.
-- Parent standard: see `/Volumes/external_drive/Git/template/projects/ongoing/AGENTS.md`.
+
+- Holds the committed source document that the site is built from and offers
+  for download. It is both pipeline input and published asset.
 
 ## Layout
-- (to be filled: list child folders/files and their roles)
+
+- `AII.pdf` — the Active Inference Institute source PDF, 211 pages. Read by
+  `scripts/extract_pdf.py`, downloaded via the footer and atlas "Source PDF"
+  links, and referenced as `siteData.site.sourcePdf` in `build.mjs`.
 
 ## Gotchas
-- (to be filled)
+
+- `extract_pdf.py` copies its input PDF here unless the input already is this
+  file, so `npm run extract` with no argument leaves it untouched.
+- Adopting a new edition means replacing this file and re-running
+  `npm run extract`; `SECTION_RANGES` and `THUMBNAIL_PAGES` in the script are
+  page-number maps tied to the current edition.

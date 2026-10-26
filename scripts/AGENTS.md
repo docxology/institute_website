@@ -30,14 +30,17 @@ page load — these are offline content-pipeline entrypoints only.
 
 - No flag parsing: `extract_pdf.py` requires exactly one positional PDF path; a wrong
   argument count or missing file exits 2 with a usage line (there is no `--help`).
-- `npm run extract` hardcodes the owner-local source path
-  (`/Users/4d/Downloads/AII.pdf`); prefer invoking `extract_pdf.py` with an explicit path.
+- `npm run extract` passes the committed `assets/source/AII.pdf`. The script
+  skips its copy step when the input already is that file, so a default run
+  leaves `assets/source/AII.pdf` untouched.
 - Poppler utilities (`pdftotext`, `pdfinfo`, `pdftoppm`) must be on PATH (Homebrew on
   this machine).
 - `SECTION_RANGES` and `THUMBNAIL_PAGES` in `extract_pdf.py` are page-number maps tied
   to the current PDF edition; a new source edition requires re-checking both.
 - Outputs are committed artifacts: rerunning extraction rewrites the 400+ KB
-  `src/content/pdf-pages.json` and recopies the 37 MB `assets/source/AII.pdf`. Only
-  rerun when adopting a new source edition; commit the results deliberately.
+  `src/content/pdf-pages.json` and the `assets/img/source-page-*.png` thumbnails,
+  and copies the input PDF over `assets/source/AII.pdf` unless it already is that
+  file. Only rerun when adopting a new source edition; commit the results
+  deliberately.
 - `npm run check` compiles this script (`python3 -m py_compile`), which creates a
   gitignored `scripts/__pycache__/`; never commit it.

@@ -1,4 +1,9 @@
 # assets
 
-> Status: SKELETON (auto-generated 2026-08-30, fleet pass in progress).
-> Describe what this folder contains and how to use it, then remove this note.
+Static assets for the generated site: `css/styles.css` (the only stylesheet),
+`js/site.js` and `js/atlas.js` (deferred classic scripts), `img/` (PDF page
+thumbnails), and `source/AII.pdf` (the committed source document).
+
+Nothing here is compiled — `src/build.mjs` only links to these files. The
+`img/` and `source/` contents are produced by `npm run extract`; see
+[AGENTS.md](AGENTS.md).

@@ -1,7 +1,7 @@
 # Manuscript Status — institute_website
 
 - **Repo type:** Static website (GitHub Pages; `src/build.mjs` generates the
-  HTML; Node >= 20 per `package.json`).
+  HTML; Node >= 22 per `package.json`).
 - **Evidence checked:** repo root `README.md`, `package.json`, `src/`,
   `scripts/`, `assets/`, `atlas/`, top-level `*.html` pages. No `manuscript/`
   or `paper/` directory exists.

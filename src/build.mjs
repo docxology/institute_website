@@ -370,7 +370,7 @@ function build() {
   );
   writeFile(
     "robots.txt",
-    `User-agent: *\nAllow: /\nSitemap: https://activeinferenceinstitute.github.io/institute_website/sitemap.xml\n`,
+    `User-agent: *\nAllow: /\nSitemap: https://docxology.github.io/institute_website/sitemap.xml\n`,
   );
   const urls = [
     "index.html",
@@ -382,7 +382,7 @@ function build() {
   writeFile(
     "sitemap.xml",
     `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls
-      .map((url) => `  <url><loc>https://activeinferenceinstitute.github.io/institute_website/${url}</loc></url>`)
+      .map((url) => `  <url><loc>https://docxology.github.io/institute_website/${url}</loc></url>`)
       .join("\n")}\n</urlset>\n`,
   );
   console.log(`Built ${urls.length} public pages plus 404.html`);

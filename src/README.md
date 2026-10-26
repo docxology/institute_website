@@ -1,4 +1,8 @@
 # src
 
-> Status: SKELETON (auto-generated 2026-08-30, fleet pass in progress).
-> Describe what this folder contains and how to use it, then remove this note.
+The source of truth for the site. `build.mjs` is a dependency-free Node ESM
+generator that reads `content/site-data.json` and `content/pdf-pages.json` and
+writes every generated file in the repository root and `atlas/`.
+
+Run it with `npm run build`. See [AGENTS.md](AGENTS.md) for the contract and
+`content/README.md` for the input data.

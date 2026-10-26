@@ -8,10 +8,10 @@ data; `scripts/extract_pdf.py` extracts publication content. See root
 ## How it works
 
 - `npm run build` → `node src/build.mjs` (regenerates the site HTML).
-- `npm run extract` → `python3 scripts/extract_pdf.py /Users/4d/Downloads/AII.pdf`
-  (owner-local input path; not portable).
+- `npm run extract` → `python3 scripts/extract_pdf.py assets/source/AII.pdf`
+  (re-runs the PDF pipeline against the committed source PDF).
 - `npm run check` → syntax-checks `src/build.mjs` and `extract_pdf.py`.
-- Requires Node >= 20 (`package.json` `engines`).
+- Requires Node >= 22 (`package.json` `engines`).
 
 ## Layout
 

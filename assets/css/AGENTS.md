@@ -1,16 +1,19 @@
 # AGENTS.md — `institute_website/assets/css`
 
-> Status: SKELETON (auto-generated 2026-08-30, fleet pass in progress).
-> Contents below must be verified and expanded by a lane agent before this
-> stub is considered accurate.
-
 ## Scope
-- Local-only path under `projects/ongoing/` — matched by the root
-  `.gitignore` rule `projects/*` and never committed.
-- Parent standard: see `/Volumes/external_drive/Git/template/projects/ongoing/AGENTS.md`.
+
+- Styling for the generated static site. One stylesheet, no preprocessor and
+  no build step.
 
 ## Layout
-- (to be filled: list child folders/files and their roles)
+
+- `styles.css` — all site styles: layout bands, cards, atlas rows, pager, and
+  the responsive breakpoints. Linked by `src/build.mjs` from every page.
 
 ## Gotchas
-- (to be filled)
+
+- Class names are part of the generator contract: `build.mjs` emits
+  `site-header`, `content-band`, `card-grid`, `atlas-row`, `source-grid`,
+  `pager`, and similar hooks. Renaming a class requires updating `build.mjs`.
+- `site.js` toggles the `data-scrolled` attribute on `.site-header`; style that
+  attribute rather than adding scroll listeners.

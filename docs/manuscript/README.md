@@ -1,4 +1,7 @@
 # manuscript
 
-> Status: SKELETON (auto-generated 2026-08-30, fleet pass in progress).
-> Describe what this folder contains and how to use it, then remove this note.
+Template placeholder. This repository is a public-information website, so no
+publication-target manuscript applies today; `MANUSCRIPT_STATUS.md` records that
+assessment and what would change it.
+
+See [AGENTS.md](AGENTS.md).

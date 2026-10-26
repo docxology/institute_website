@@ -1,16 +1,21 @@
 # AGENTS.md — `institute_website/assets/js`
 
-> Status: SKELETON (auto-generated 2026-08-30, fleet pass in progress).
-> Contents below must be verified and expanded by a lane agent before this
-> stub is considered accurate.
-
 ## Scope
-- Local-only path under `projects/ongoing/` — matched by the root
-  `.gitignore` rule `projects/*` and never committed.
-- Parent standard: see `/Volumes/external_drive/Git/template/projects/ongoing/AGENTS.md`.
+
+- Browser-side enhancements only. The site is fully readable with JavaScript
+  disabled; nothing here generates content.
 
 ## Layout
-- (to be filled: list child folders/files and their roles)
+
+- `site.js` — toggles `data-scrolled` on `.site-header` while scrolling.
+  Loaded on every page.
+- `atlas.js` — client-side search and section filter for the atlas index.
+  Loaded only on `atlas/index.html`, and only useful there.
 
 ## Gotchas
-- (to be filled)
+
+- Both files are classic scripts (`<script defer>`), not ES modules; they are
+  not bundled and share no imports.
+- `atlas.js` reads `data-search` and `data-section` attributes emitted by
+  `build.mjs`; changing those attribute names breaks filtering silently.
+- `atlas.js` runs its filter once on load to sync the visible count.
